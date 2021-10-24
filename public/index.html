@@ -5,21 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding: 12px;
+        display: grid;
+        place-items: center;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 40px;
+      }
+      form {
+        padding: 20px;
+        border: 1px solid #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 58%;
+        width: 58%;
+        margin: 50px auto;
+      }
+      form input {
+        padding: 20px 40px;
+        border: 2px solid lightgray;
+        outline: none;
+        flex: 1;
+      }
+      form button {
+        padding: 20px 40px;
+        background-color: crimson;
+        color: white;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        border: 2px solid crimson;
+      }
+
+      @media (max-width: 600px) {
+        form {
+          flex-direction: column;
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        form input {
+          width: 290px;
+        }
+
+        form button {
+          width: 100%;
+          margin-top: 12px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <form action="/info" method="post" style="margin: 50px auto; width: 58%">
+    <h1>Youtube Video Downloader Api</h1>
+    <form action="/info" method="post">
       <input
         type="text"
         name="url"
         id="url"
         placeholder="youtube link"
-        style="
-          padding: 20px 40px;
-          border: 2px solid lightgray;
-          outline: none;
-          width: 58%;
-        "
+        required
       />
+      <button type="submit">Download</button>
     </form>
   </body>
 </html>
